@@ -162,7 +162,7 @@ docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f
 Then import the CSV data:
 
 ```bash
-docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f /cypher/02_import.cypher
+docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f /cypher/02_imports.cypher
 ```
 
 ## Run Example Queries
