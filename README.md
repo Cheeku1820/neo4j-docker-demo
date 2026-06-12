@@ -196,7 +196,7 @@ docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f
 Then rerun the import:
 
 ```bash
-docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f /cypher/02_import.cypher
+docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f /cypher/02_imports.cypher
 ```
 
 ## How Someone Else Can Recreate the Graph
@@ -216,7 +216,7 @@ docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f
 Then:
 
 ```bash
-docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f /cypher/02_import.cypher
+docker exec -it neo4j-seizures-april2026 cypher-shell -u neo4j -p password123 -f /cypher/02_imports.cypher
 ```
 
 After that, they can open:
