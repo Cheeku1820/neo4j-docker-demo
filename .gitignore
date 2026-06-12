@@ -1,0 +1,11 @@
+# Neo4j local database/log files
+data/
+logs/
+neo4j_data/
+neo4j_logs/
+
+# Environment/secrets
+.env
+
+# Mac files
+.DS_Store
