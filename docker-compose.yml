@@ -16,21 +16,4 @@ services:
   neo4j-normal:
     image: neo4j:latest
     container_name: neo4j-normal
-    ports:
-      - "7475:7474"
-      - "7688:7687"
-    environment:
-      - NEO4J_AUTH=neo4j/password123
-    volumes:
-      - normal_data:/data
-      - normal_logs:/logs
-      - ./import/normal:/var/lib/neo4j/import
-      - ./cypher/normal:/cypher
-
-volumes:
-  seizures_apr2026_data:
-  seizures_apr2026_logs:
-  normal_data:
-  normal_logs:
-  
-
+    ports
