@@ -11,8 +11,20 @@ services:
     ports: ["7475:7474", "7688:7687"]
     environment: [NEO4J_AUTH=neo4j/password123]
     volumes: [normal_data:/data, normal_logs:/logs, ./import/normal:/var/lib/neo4j/import, ./cypher/normal:/cypher]
+  postgres:
+    image: postgres:16
+    container_name: postgres-seizures
+    ports: ["5432:5432"]
+    environment: [POSTGRES_DB=seizures, POSTGRES_USER=postgres, POSTGRES_PASSWORD=postgres]
+    volumes: [postgres_data:/var/lib/postgresql/data, ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql]
+  python-etl:
+    build: ./python
+    depends_on: [postgres, neo4j-seizures_apr2026]
+    environment: [POSTGRES_HOST=postgres, POSTGRES_DB=seizures, POSTGRES_USER=postgres, POSTGRES_PASSWORD=postgres, NEO4J_URI=bolt://neo4j-seizures_apr2026:7687, NEO4J_USER=neo4j, NEO4J_PASSWORD=password123]
+    volumes: [./import/seizures_apr2026:/data/raw, ./postgres:/postgres]
 volumes:
   seizures_apr2026_data:
   seizures_apr2026_logs:
   normal_data:
   normal_logs:
+  postgres_data:
