@@ -15,4 +15,5 @@ services:
 
   neo4j-normal:
     image: neo4j:latest
-    container_name
+    container_name: neo4j-normal
+    ports
