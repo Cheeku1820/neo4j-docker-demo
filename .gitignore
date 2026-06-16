@@ -4,6 +4,13 @@ logs/
 neo4j_data/
 neo4j_logs/
 
+# Python virtual environments
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
 # Environment/secrets
 .env
 
